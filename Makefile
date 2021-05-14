@@ -11,6 +11,11 @@ run-all:
 	@echo "Running all tools"
 	./run_all_tools.sh
 
+.PHONY: rerun-%
+rerun-%:
+	@echo "Running test scenarios from .rerun"
+	./run_all_tools.sh rerun_$*
+
 .PHONY: clear-%-results
 clear-%-results:
 	@echo "Clearing results for $*"
